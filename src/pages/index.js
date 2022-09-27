@@ -13,8 +13,21 @@ const MOCK_IMAGE_SRC =
   "https://strapi-cdn.integration.creoate-tech.com/thumbnail_valid_top_menu_banner_1_desktop_56e6fbc922.png";
 
 const MOCK_USER_LOCATION = "51.523,-0.1963";
+const MOCK_LAT = "51.523";
+const MOCK_LONG = "-0.1963";
 
 export default function Index() {
+  const [places, setPlaces] = React.useState([]);
+  const [location, setLocation] = React.useState("");
+
+  React.useEffect(() => {
+    fetch(`api/places?lat=${MOCK_LAT}&long=${MOCK_LONG}`)
+      .then((results) => results.json())
+      .then((data) => {
+        setPlaces(data);
+      });
+  }, []);
+
   return (
     <Container
       maxWidth="sm"
@@ -32,22 +45,22 @@ export default function Index() {
         </Typography>
         <Button>Search Location</Button>
         <Grid container alignItems="center" justifyContent="center">
-          {MOCK_DATA.results.map((place) => (
+          {places.map((place) => (
             <Grid
               item
               key={`place-id-${place.fsq_id}`}
-              id={place.id}
+              id={place.fsq_id}
               xs={12}
               md={6}
             >
               <Box sx={{ border: "1px solid green", borderRadius: "30px" }}>
                 <Image
                   alt={place.name}
-                  src={MOCK_IMAGE_SRC}
+                  src={place.photo}
                   width="100%"
                   height="100%"
                   layout="responsive"
-                  objectFit="contain"
+                  objectFit="fill"
                 />
                 <Typography
                   sx={{
