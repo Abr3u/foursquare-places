@@ -2,48 +2,70 @@ import * as React from "react";
 
 // mui
 import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import { Button, Grid, Stack } from "@mui/material";
 
-import MOCK_DATA from "../../tests/mocks/foursquare-places-search-response.json";
+// next
 import Image from "next/image";
-
-const MOCK_IMAGE_SRC =
-  "https://strapi-cdn.integration.creoate-tech.com/thumbnail_valid_top_menu_banner_1_desktop_56e6fbc922.png";
-
-const MOCK_USER_LOCATION = "51.523,-0.1963";
-const MOCK_LAT = "51.523";
-const MOCK_LONG = "-0.1963";
 
 export default function Index() {
   const [places, setPlaces] = React.useState([]);
-  const [location, setLocation] = React.useState("");
+  const [lat, setLat] = React.useState(0);
+  const [long, setLong] = React.useState(0);
+
+  const getMyLocation = () => {
+    const location = window.navigator && window.navigator.geolocation;
+
+    if (location) {
+      location.getCurrentPosition(
+        (position) => {
+          setLat(position.coords.latitude);
+          setLong(position.coords.longitude);
+        },
+        (error) => {
+          // IMPROV: log this error according to the team's guidelines so our monitoring tool can pick it up and alert if needed
+          setLat(0);
+          setLong(0);
+        }
+      );
+    }
+  };
 
   React.useEffect(() => {
-    fetch(`api/places?lat=${MOCK_LAT}&long=${MOCK_LONG}`)
+    getMyLocation();
+  }, []);
+
+  React.useEffect(() => {
+    fetch(`api/places?lat=${lat}&long=${long}`)
       .then((results) => results.json())
       .then((data) => {
         setPlaces(data);
       });
-  }, []);
+  }, [lat, long]);
 
   return (
     <Container
       maxWidth="sm"
-      sx={{ border: "1px solid red", borderRadius: "30px" }}
+      sx={{
+        border: "1px solid red",
+        borderRadius: "30px",
+        backgroundColor: 'black',
+      }}
     >
-      <Stack direction="column">
+      <Stack direction="column" spacing={3} sx={{mt: 4}}>
         <Typography
+          variant="h4"
           sx={{
-            border: "1px solid green",
-            borderRadius: "30px",
             textAlign: "center",
+            color: 'white'
           }}
         >
-          Foursquare in your location ({MOCK_USER_LOCATION})
+          {(lat === 0) & (long === 0)
+            ? `Please allow the browser to access your location`
+            : `Foursquare in your location (${lat},${long})`}
         </Typography>
-        <Button>Search Location</Button>
         <Grid container alignItems="center" justifyContent="center">
           {places.map((place) => (
             <Grid
@@ -52,21 +74,31 @@ export default function Index() {
               id={place.fsq_id}
               xs={12}
               md={6}
+              sx={{
+                position: "relative",
+                border: "1px solid grey",
+              }}
             >
-              <Box sx={{ border: "1px solid green", borderRadius: "30px" }}>
-                <Image
-                  alt={place.name}
-                  src={place.photo}
-                  width="100%"
-                  height="100%"
-                  layout="responsive"
-                  objectFit="fill"
-                />
+              <Image
+                alt={place.name}
+                src={place.photo}
+                width="100%"
+                height="100%"
+                layout="responsive"
+                objectFit="fill"
+              />
+              <Box
+                sx={{
+                  position: "absolute",
+                  bottom: "2px",
+                }}
+              >
                 <Typography
+                  variant="body1"
                   sx={{
-                    border: "1px solid blue",
-                    borderRadius: "30px",
-                    textAlign: "center",
+                    textAlign: "left",
+                    color: "white",
+                    textShadow: "2px 2px #000000",
                   }}
                 >
                   {place.name}

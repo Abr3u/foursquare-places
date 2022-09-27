@@ -1,17 +1,24 @@
-import { createTheme } from '@mui/material/styles';
-import { red } from '@mui/material/colors';
+import { createTheme } from "@mui/material/styles";
+import { red } from "@mui/material/colors";
 
-// Create a theme instance.
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#556cd6',
+      main: "#556cd6",
     },
     secondary: {
-      main: '#19857b',
+      main: "#19857b",
     },
     error: {
       main: red.A400,
+    },
+  },
+  typography: {
+    h4: {
+      fontFamily: '"Roboto Slab", "IBM Plex Serif", "Arial", serif',
+    },
+    body1: {
+      fontFamily: '"Nunito", "Open Sans", "Lato", sans-serif',
     },
   },
 });
