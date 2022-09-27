@@ -1,0 +1,491 @@
+{
+  "results": [
+    {
+      "fsq_id": "52069e0f11d22721f757c611",
+      "categories": [
+        {
+          "id": 13034,
+          "name": "Café",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/cafe_",
+            "suffix": ".png"
+          }
+        },
+        {
+          "id": 13046,
+          "name": "Ice Cream Parlor",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/icecream_",
+            "suffix": ".png"
+          }
+        },
+        {
+          "id": 13065,
+          "name": "Restaurant",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/default_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 500,
+      "geocodes": {
+        "main": {
+          "latitude": 38.68932,
+          "longitude": -9.332049
+        },
+        "roof": {
+          "latitude": 38.68932,
+          "longitude": -9.332049
+        }
+      },
+      "link": "/v3/places/52069e0f11d22721f757c611",
+      "location": {
+        "address": "Estrada da Torre",
+        "country": "PT",
+        "cross_street": "Carcavelos",
+        "formatted_address": "Estrada da Torre (Carcavelos), 2775-687 Carcavelos",
+        "locality": "Carcavelos",
+        "neighborhood": ["Torre"],
+        "postcode": "2775-687",
+        "region": "Lisbon"
+      },
+      "name": "Santini",
+      "related_places": {},
+      "timezone": "Europe/Lisbon"
+    },
+    {
+      "fsq_id": "4b570f03f964a520bc2428e3",
+      "categories": [
+        {
+          "id": 16003,
+          "name": "Beach",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/beach_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 836,
+      "geocodes": {
+        "main": {
+          "latitude": 38.680471,
+          "longitude": -9.336397
+        }
+      },
+      "link": "/v3/places/4b570f03f964a520bc2428e3",
+      "location": {
+        "address": "Avenida Marginal",
+        "country": "PT",
+        "formatted_address": "Avenida Marginal, Carcavelos",
+        "locality": "Carcavelos",
+        "region": "Lisbon"
+      },
+      "name": "Praia de Carcavelos",
+      "related_places": {
+        "children": [
+          {
+            "fsq_id": "4b5856e3f964a5207a5328e3",
+            "name": "Windsurf Café"
+          },
+          {
+            "fsq_id": "53b82b96498e13dbda78f0ef",
+            "name": "Quiosque Olá"
+          },
+          {
+            "fsq_id": "5d5412c4fd984d0007367b83",
+            "name": "Marisca Petisca"
+          },
+          {
+            "fsq_id": "4d4451f21928a35d7c84b770",
+            "name": "Fizz Beach Bar"
+          },
+          {
+            "fsq_id": "5d5590298c55720008ecc601",
+            "name": "The Juice Hut"
+          }
+        ]
+      },
+      "timezone": "Europe/Lisbon"
+    },
+    {
+      "fsq_id": "4b9e8f78f964a52038ef36e3",
+      "categories": [
+        {
+          "id": 16003,
+          "name": "Beach",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/beach_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 1838,
+      "geocodes": {
+        "main": {
+          "latitude": 38.676181,
+          "longitude": -9.323085
+        },
+        "roof": {
+          "latitude": 38.676181,
+          "longitude": -9.323085
+        }
+      },
+      "link": "/v3/places/4b9e8f78f964a52038ef36e3",
+      "location": {
+        "address": "Avenida Marginal",
+        "country": "PT",
+        "cross_street": "Forte de S. Julião da Barra",
+        "formatted_address": "Avenida Marginal (Forte de S. Julião da Barra), Oeiras",
+        "locality": "Oeiras",
+        "region": "Lisbon"
+      },
+      "name": "Torre Beach (Praia da Torre)",
+      "related_places": {
+        "children": [
+          {
+            "fsq_id": "4fca842ee4b0adb198eb1f61",
+            "name": "BBeach Oeiras Club"
+          },
+          {
+            "fsq_id": "4ba3de07f964a520436838e3",
+            "name": "Restaurante Praia Caffe"
+          }
+        ]
+      },
+      "timezone": "Europe/Lisbon"
+    },
+    {
+      "fsq_id": "4ba3f8def964a520187338e3",
+      "categories": [
+        {
+          "id": 16019,
+          "name": "Hiking Trail",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/hikingtrail_",
+            "suffix": ".png"
+          }
+        },
+        {
+          "id": 16030,
+          "name": "Other Great Outdoors",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/outdoors_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 2003,
+      "geocodes": {
+        "main": {
+          "latitude": 38.677328,
+          "longitude": -9.318951
+        },
+        "roof": {
+          "latitude": 38.677328,
+          "longitude": -9.318951
+        }
+      },
+      "link": "/v3/places/4ba3f8def964a520187338e3",
+      "location": {
+        "address": "Passeio Marítimo de Oeiras, 2780 Oeiras",
+        "country": "PT",
+        "cross_street": "Av. Marginal",
+        "formatted_address": "Passeio Marítimo de Oeiras, 2780 Oeiras (Av. Marginal), Oeiras",
+        "locality": "Oeiras",
+        "region": "Lisbon"
+      },
+      "name": "Passeio Marítimo de Oeiras",
+      "related_places": {},
+      "timezone": "Europe/Lisbon"
+    },
+    {
+      "fsq_id": "4c434ca5a5c5ef3b1eb8b06f",
+      "categories": [
+        {
+          "id": 16000,
+          "name": "Landmarks and Outdoors",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/default_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 1991,
+      "geocodes": {
+        "main": {
+          "latitude": 38.692338,
+          "longitude": -9.315427
+        }
+      },
+      "link": "/v3/places/4c434ca5a5c5ef3b1eb8b06f",
+      "location": {
+        "address": "Largo Marquês de Pombal",
+        "country": "PT",
+        "formatted_address": "Largo Marquês de Pombal, 2780-288 Oeiras",
+        "locality": "Oeiras",
+        "neighborhood": ["Pombal"],
+        "postcode": "2780-288",
+        "region": "Lisbon"
+      },
+      "name": "Jardins do Palácio do Marquês de Pombal",
+      "related_places": {
+        "parent": {
+          "fsq_id": "4fd0c5d1c2ee9566093acebf",
+          "name": "Palácio do Marquês de Pombal"
+        },
+        "children": [
+          {
+            "fsq_id": "508264d1e4b093287bddcfa0",
+            "name": "Galeria Municipal Lagar de Azeite"
+          },
+          {
+            "fsq_id": "555f16ea498eb9320fb55c71",
+            "name": "Adega do Palácio do Marquês de Pombal"
+          }
+        ]
+      },
+      "timezone": "Europe/Lisbon"
+    },
+    {
+      "fsq_id": "4b9f4713f964a520aa1a37e3",
+      "categories": [
+        {
+          "id": 16003,
+          "name": "Beach",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/beach_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 2810,
+      "geocodes": {
+        "main": {
+          "latitude": 38.693752,
+          "longitude": -9.369347
+        },
+        "roof": {
+          "latitude": 38.693752,
+          "longitude": -9.369347
+        }
+      },
+      "link": "/v3/places/4b9f4713f964a520aa1a37e3",
+      "location": {
+        "address": "Avenida Marginal",
+        "country": "PT",
+        "formatted_address": "Avenida Marginal, São Pedro do Estoril",
+        "locality": "São Pedro do Estoril",
+        "region": "Lisbon"
+      },
+      "name": "Praia de São Pedro do Estoril",
+      "related_places": {},
+      "timezone": "Europe/Lisbon"
+    },
+    {
+      "fsq_id": "4c25c848905a0f473b206260",
+      "categories": [
+        {
+          "id": 16032,
+          "name": "Park",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 3226,
+      "geocodes": {
+        "main": {
+          "latitude": 38.701464,
+          "longitude": -9.305392
+        },
+        "roof": {
+          "latitude": 38.701464,
+          "longitude": -9.305392
+        }
+      },
+      "link": "/v3/places/4c25c848905a0f473b206260",
+      "location": {
+        "address": "Rua Coro de Santo Amaro de Oeiras",
+        "country": "PT",
+        "cross_street": "R. de São Salvador de Baía",
+        "formatted_address": "Rua Coro de Santo Amaro de Oeiras (R. de São Salvador de Baía), 2780-379 Oeiras",
+        "locality": "Oeiras",
+        "postcode": "2780-379",
+        "region": "Lisbon"
+      },
+      "name": "Poets' Park (Parque dos Poetas)",
+      "related_places": {
+        "children": [
+          {
+            "fsq_id": "5f8b26404e6337189af7e7ae",
+            "name": "Verso"
+          },
+          {
+            "fsq_id": "55aad714498e68da46d17ae2",
+            "name": "Templo da Poesia"
+          },
+          {
+            "fsq_id": "60bcc2de04202f4c45161cb2",
+            "name": "Quiosque dos Poetas"
+          },
+          {
+            "fsq_id": "5e46c5eaa8dc4200086dd1af",
+            "name": "Ponte do Parque"
+          },
+          {
+            "fsq_id": "4e69ec411495acb0c681a611",
+            "name": "Parque Infantil"
+          },
+          {
+            "fsq_id": "5ceae6ed3ba767002c1319af",
+            "name": "Lago dos Jardins dos Poetas"
+          }
+        ]
+      },
+      "timezone": "Europe/Lisbon"
+    },
+    {
+      "fsq_id": "4daaab12a86e771ea7291259",
+      "categories": [
+        {
+          "id": 16046,
+          "name": "Scenic Lookout",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/sceniclookout_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 4472,
+      "geocodes": {
+        "main": {
+          "latitude": 38.700545,
+          "longitude": -9.386959
+        },
+        "roof": {
+          "latitude": 38.700545,
+          "longitude": -9.386959
+        }
+      },
+      "link": "/v3/places/4daaab12a86e771ea7291259",
+      "location": {
+        "address": "Avenida Marginal",
+        "country": "PT",
+        "formatted_address": "Avenida Marginal, Cascais",
+        "locality": "Cascais",
+        "region": "Lisbon"
+      },
+      "name": "Paredão Estoril",
+      "related_places": {},
+      "timezone": "Europe/Lisbon"
+    },
+    {
+      "fsq_id": "4b9f4648f964a5208d1a37e3",
+      "categories": [
+        {
+          "id": 16003,
+          "name": "Beach",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/beach_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 4975,
+      "geocodes": {
+        "main": {
+          "latitude": 38.702108,
+          "longitude": -9.392174
+        }
+      },
+      "link": "/v3/places/4b9f4648f964a5208d1a37e3",
+      "location": {
+        "address": "Praceta Nuno Ribeiro",
+        "country": "PT",
+        "formatted_address": "Praceta Nuno Ribeiro, Cascais",
+        "locality": "Cascais",
+        "region": "Lisbon"
+      },
+      "name": "Praia da Poça",
+      "related_places": {},
+      "timezone": "Europe/Lisbon"
+    },
+    {
+      "fsq_id": "4b79a42af964a520ab072fe3",
+      "categories": [
+        {
+          "id": 13034,
+          "name": "Café",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/cafe_",
+            "suffix": ".png"
+          }
+        },
+        {
+          "id": 13036,
+          "name": "Tea Room",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/tearoom_",
+            "suffix": ".png"
+          }
+        },
+        {
+          "id": 13065,
+          "name": "Restaurant",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/default_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 5378,
+      "geocodes": {
+        "main": {
+          "latitude": 38.703808,
+          "longitude": -9.396119
+        },
+        "roof": {
+          "latitude": 38.703808,
+          "longitude": -9.396119
+        }
+      },
+      "link": "/v3/places/4b79a42af964a520ab072fe3",
+      "location": {
+        "address": "Avenida Nice 54",
+        "country": "PT",
+        "cross_street": "",
+        "formatted_address": "Avenida Nice 54, 2765-259 Estoril",
+        "locality": "Estoril",
+        "neighborhood": ["Estoril"],
+        "postcode": "2765-259",
+        "region": "Lisbon"
+      },
+      "name": "Pastelaria Garrett do Estoril",
+      "related_places": {},
+      "timezone": "Europe/Lisbon"
+    }
+  ],
+  "context": {
+    "geo_bounds": {
+      "circle": {
+        "center": {
+          "latitude": 38.687916,
+          "longitude": -9.337811
+        },
+        "radius": 22000
+      }
+    }
+  }
+}
