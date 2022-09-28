@@ -1,9 +1,8 @@
 import axios from "axios";
 
-// TODO: process.env
-const BASE_URL = "https://api.foursquare.com/v3";
-const DEFAULT_TIMEOUT = 4000;
-const API_KEY = "fsq3Wy3+RUvdvcRLm4DkXbqHwQjIUUjaZcaQNxBWYjuZGhE=";
+const BASE_URL = process.env.FOURSQUARE_BASE_URL;
+const DEFAULT_TIMEOUT = process.env.DEFAULT_TIMEOUT;
+const API_KEY = process.env.API_KEY;
 
 const client = axios.create({
   baseURL: BASE_URL,

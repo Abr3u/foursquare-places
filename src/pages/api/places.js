@@ -23,8 +23,6 @@ const ERRORS = {
   },
 };
 
-// TODO: env file
-// TODO: general PLACES provider
 export default async function handler(req, res) {
   if (req.method !== "GET") {
     res.status(405);
