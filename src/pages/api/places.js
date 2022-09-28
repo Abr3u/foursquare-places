@@ -1,5 +1,7 @@
 import util from "util";
-import axios from "axios";
+
+// api-client
+import client from "../../api/clients/foursquare-client";
 
 // utils
 import { getPhotoPath } from "../../utils/functions";
@@ -9,8 +11,8 @@ const REQUIRED_QUERY_PARAMS = ["lat", "long"];
 const FALLBACK_PHOTO_URL = "/assets/images/coming-soon.jpg";
 
 const ENDPOINTS = {
-  SEARCH_PLACES: "https://api.foursquare.com/v3/places/search",
-  GET_PLACES_PHOTOS: "https://api.foursquare.com/v3/places/%s/photos",
+  SEARCH_PLACES: "/places/search",
+  GET_PLACES_PHOTOS: "/places/%s/photos",
 };
 
 // errors
@@ -21,8 +23,9 @@ const ERRORS = {
   },
 };
 
-
 // TODO: env file
+// TODO: tests
+// TODO: general PLACES provider
 export default async function handler(req, res) {
   if (req.method !== "GET") {
     res.status(405);
@@ -53,13 +56,8 @@ export default async function handler(req, res) {
 }
 
 const getPlaces = async (lat, long) => {
-  const searchResponse = await axios.get(
-    `${ENDPOINTS.SEARCH_PLACES}?ll=${lat},${long}`,
-    {
-      headers: {
-        Authorization: "fsq3Wy3+RUvdvcRLm4DkXbqHwQjIUUjaZcaQNxBWYjuZGhE=",
-      },
-    }
+  const searchResponse = await client.get(
+    `${ENDPOINTS.SEARCH_PLACES}?ll=${lat},${long}`
   );
 
   return searchResponse.data.results;
@@ -70,13 +68,8 @@ const getPlacesPhotos = async (places) => {
   // get photos for each place
   for (let place of places) {
     allPromises.push(
-      axios.get(
-        `${util.format(ENDPOINTS.GET_PLACES_PHOTOS, place.fsq_id)}?limit=1`, // adding limit=1 here because we only need 1 image
-        {
-          headers: {
-            Authorization: "fsq3Wy3+RUvdvcRLm4DkXbqHwQjIUUjaZcaQNxBWYjuZGhE=",
-          },
-        }
+      client.get(
+        `${util.format(ENDPOINTS.GET_PLACES_PHOTOS, place.fsq_id)}?limit=1` // adding limit=1 here because we only need 1 image
       )
     );
   }

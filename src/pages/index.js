@@ -11,6 +11,7 @@ import Header from "../components/Header";
 
 // IMPROV: loading behavior
 // IMPROV: truncate place's name if too big
+// TODO: snapshot testing
 export default function Index() {
   const [lat, setLat] = React.useState(0);
   const [long, setLong] = React.useState(0);
