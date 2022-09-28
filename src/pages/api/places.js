@@ -19,12 +19,11 @@ const ENDPOINTS = {
 const ERRORS = {
   REQUIRED_QUERY_PARAMS_MISSING: {
     errorCode: "PLACES001",
-    errorCode: `Required query params missing. Required params: ${REQUIRED_QUERY_PARAMS} `,
+    errorMsg: `Required query params missing. Required params: ${REQUIRED_QUERY_PARAMS}`,
   },
 };
 
 // TODO: env file
-// TODO: tests
 // TODO: general PLACES provider
 export default async function handler(req, res) {
   if (req.method !== "GET") {
@@ -89,7 +88,7 @@ const addPhotoToPlaces = (places, allPhotosResults) => {
     } else {
       const imageResponse = result.value.data;
 
-      // maybe foursquare doesnt have an image for every place
+      // maybe foursquare doesn't have an image for every place
       photoUrl = imageResponse[0]
         ? getPhotoPath(imageResponse[0])
         : FALLBACK_PHOTO_URL;

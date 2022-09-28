@@ -75,4 +75,75 @@ describe("/api/places", () => {
       }
     });
   });
+
+  describe("error", () => {
+    it("should get 405 for non implemented http method", async () => {
+      const { req, res } = createMocks({
+        method: "POST",
+      });
+
+      // act
+      await handler(req, res);
+
+      // assert
+      const apiCalls = mock.history.get;
+      expect(apiCalls.length).toEqual(0);
+
+      // - status code
+      expect(res._getStatusCode()).toBe(405);
+    });
+
+    it("should get 400 if any required query param is missing", async () => {
+      const { req, res } = createMocks({
+        method: "GET",
+        query: {
+          def: "not",
+          lat: "long",
+        },
+      });
+
+      // act
+      await handler(req, res);
+
+      // assert
+      const apiCalls = mock.history.get;
+      expect(apiCalls.length).toEqual(0);
+
+      // - status code
+      expect(res._getStatusCode()).toBe(400);
+
+      const body = JSON.parse(res._getData());
+      expect(body.errorCode).toBe("PLACES001");
+      expect(body.errorMsg).toBe(
+        "Required query params missing. Required params: lat,long"
+      );
+    });
+
+    it("should handle unexpected errors", async () => {
+      // reset mocks so we can throw an error
+      mock.reset();
+      mock.onGet(MOCK_SEARCH_ENDPOINT).reply(500, "Something Bad Happened");
+
+      const { req, res } = createMocks({
+        method: "GET",
+        query: {
+          lat: MOCK_LAT,
+          long: MOCK_LONG,
+        },
+      });
+
+      // act
+      await handler(req, res);
+
+      // assert
+      const apiCalls = mock.history.get;
+      expect(apiCalls[0].url).toEqual(MOCK_SEARCH_ENDPOINT);
+
+      // - status code
+      expect(res._getStatusCode()).toBe(500);
+
+      const body = JSON.parse(res._getData());
+      expect(body).toEqual([]);
+    });
+  });
 });
