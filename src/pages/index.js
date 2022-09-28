@@ -9,8 +9,6 @@ import Container from "@mui/material/Container";
 import Place from "../components/Place";
 import Header from "../components/Header";
 
-// IMPROV: loading behavior
-// IMPROV: truncate place's name if too big
 export default function Index() {
   const [lat, setLat] = React.useState(0);
   const [long, setLong] = React.useState(0);
@@ -27,7 +25,7 @@ export default function Index() {
           setLong(position.coords.longitude);
         },
         (error) => {
-          // IMPROV: log this error according to the team's guidelines so our monitoring tool can pick it up and alert if needed
+          // LOGGING: log this error according to the team's guidelines so our monitoring tool can pick it up and alert if needed
           setLat(0);
           setLong(0);
         }
