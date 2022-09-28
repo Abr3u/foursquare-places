@@ -1,19 +1,21 @@
 import * as React from "react";
 
 // mui
-import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
 
-// next
-import Image from "next/image";
+// components
+import Place from "../components/Place";
+import Header from "../components/Header";
 
+// IMPROV: loading behavior
+// IMPROV: truncate place's name if too big
 export default function Index() {
-  const [places, setPlaces] = React.useState([]);
   const [lat, setLat] = React.useState(0);
   const [long, setLong] = React.useState(0);
+  const [places, setPlaces] = React.useState([]);
+  const [headerText, setHeaderText] = React.useState("");
 
   const getMyLocation = () => {
     const location = window.navigator && window.navigator.geolocation;
@@ -38,37 +40,27 @@ export default function Index() {
   }, []);
 
   React.useEffect(() => {
+    if (lat === 0 && long === 0) {
+      setHeaderText("Please allow the browser to access your location");
+    } else {
+      setHeaderText(`Foursquare in your location (${lat} , ${long})`);
+    }
+
     fetch(`api/places?lat=${lat}&long=${long}`)
       .then((results) => results.json())
       .then((data) => {
         setPlaces(data);
       });
   }, [lat, long]);
-  // TODO: loading behavior
-  // TODO: truncate place's name if too big
 
   return (
     <Container
-      // maxWidth="sm"
       sx={{
-        // border: "1px solid red",
-        // borderRadius: "30px",
-        backgroundColor: 'black',
+        backgroundColor: "black",
       }}
     >
-      <Stack direction="column" spacing={3} sx={{ mt: 4 }}>
-        <Typography
-          variant="h4"
-          sx={{
-            // border: "1px solid green",
-            textAlign: "center",
-            color: "white",
-          }}
-        >
-          {(lat === 0) & (long === 0)
-            ? `Please allow the browser to access your location`
-            : `Foursquare in your location (${lat} , ${long})`}
-        </Typography>
+      <Stack direction="column" spacing={3}>
+        <Header text={headerText} sx={{ mt: 3 }}></Header>
         <Grid container alignItems="center" justifyContent="center">
           {places.map((place) => (
             <Grid
@@ -82,31 +74,7 @@ export default function Index() {
                 border: "1px solid grey",
               }}
             >
-              <Image
-                alt={place.name}
-                src={place.photo}
-                width="100%"
-                height="100%"
-                layout="responsive"
-                objectFit="fill"
-              />
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: "2px",
-                }}
-              >
-                <Typography
-                  variant="body1"
-                  sx={{
-                    textAlign: "left",
-                    color: "white",
-                    textShadow: "2px 2px #000000",
-                  }}
-                >
-                  {place.name}
-                </Typography>
-              </Box>
+              <Place name={place.name} photo={place.photo}></Place>
             </Grid>
           ))}
         </Grid>

@@ -8,6 +8,12 @@ import { getPhotoPath } from "../../utils/functions";
 const REQUIRED_QUERY_PARAMS = ["lat", "long"];
 const FALLBACK_PHOTO_URL = "/assets/images/coming-soon.jpg";
 
+const ENDPOINTS = {
+  SEARCH_PLACES: "https://api.foursquare.com/v3/places/search",
+  GET_PLACES_PHOTOS: "https://api.foursquare.com/v3/places/%s/photos",
+};
+
+// errors
 const ERRORS = {
   REQUIRED_QUERY_PARAMS_MISSING: {
     errorCode: "PLACES001",
@@ -15,11 +21,8 @@ const ERRORS = {
   },
 };
 
-const ENDPOINTS = {
-  SEARCH_PLACES: "https://api.foursquare.com/v3/places/search",
-  GET_PLACES_PHOTOS: "https://api.foursquare.com/v3/places/%s/photos",
-};
 
+// TODO: env file
 export default async function handler(req, res) {
   if (req.method !== "GET") {
     res.status(405);
@@ -43,7 +46,7 @@ export default async function handler(req, res) {
 
     res.status(200).json(places);
   } catch (error) {
-    console.log("---> ERROR ", error);
+    console.log("---> api/places ERROR ", error);
     // IMPROV: log this error according to the team's guidelines so our monitoring tool can pick it up and alert if needed
     res.status(500).json([]);
   }
