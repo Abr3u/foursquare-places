@@ -23,4 +23,11 @@ const theme = createTheme({
   },
 });
 
+theme.typography.body1 = {
+  fontSize: "1.5rem",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "2rem",
+  },
+};
+
 export default theme;

@@ -44,27 +44,30 @@ export default function Index() {
         setPlaces(data);
       });
   }, [lat, long]);
+  // TODO: loading behavior
+  // TODO: truncate place's name if too big
 
   return (
     <Container
-      maxWidth="sm"
+      // maxWidth="sm"
       sx={{
-        border: "1px solid red",
-        borderRadius: "30px",
+        // border: "1px solid red",
+        // borderRadius: "30px",
         backgroundColor: 'black',
       }}
     >
-      <Stack direction="column" spacing={3} sx={{mt: 4}}>
+      <Stack direction="column" spacing={3} sx={{ mt: 4 }}>
         <Typography
           variant="h4"
           sx={{
+            // border: "1px solid green",
             textAlign: "center",
-            color: 'white'
+            color: "white",
           }}
         >
           {(lat === 0) & (long === 0)
             ? `Please allow the browser to access your location`
-            : `Foursquare in your location (${lat},${long})`}
+            : `Foursquare in your location (${lat} , ${long})`}
         </Typography>
         <Grid container alignItems="center" justifyContent="center">
           {places.map((place) => (
