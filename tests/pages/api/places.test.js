@@ -3,7 +3,6 @@ import { createMocks } from "node-mocks-http";
 
 // src files
 import handler from "../../../src/pages/api/places";
-import { getPhotoPath } from "../../../src/utils/functions";
 import client from "../../../src/api/clients/foursquare-client";
 
 // mock data
@@ -63,7 +62,10 @@ describe("/api/places", () => {
         );
 
         expect(place.name).toEqual(expectedPlace.name);
-        expect(place.photo).toEqual(getPhotoPath(MOCK_PHOTOS[0]));
+
+        expect(place.photo).toEqual(
+          `${MOCK_PHOTOS[0].prefix}original${MOCK_PHOTOS[0].suffix}`
+        );
 
         // assert we called the photos endpoint for each place
         expect(

@@ -3,9 +3,6 @@ import util from "util";
 // api-client
 import client from "../../api/clients/foursquare-client";
 
-// utils
-import { getPhotoPath } from "../../utils/functions";
-
 // constants
 const FALLBACK_PHOTO_URL = "/assets/images/coming-soon.jpg";
 
@@ -67,3 +64,5 @@ const addPhotoToPlaces = (places, allPhotosResults) => {
     places[i].photo = photoUrl;
   }
 };
+
+const getPhotoPath = (photo) => `${photo.prefix}original${photo.suffix}`;
