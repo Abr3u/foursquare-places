@@ -52,11 +52,7 @@ export default function Index() {
   }, [lat, long]);
 
   return (
-    <Container
-      sx={{
-        backgroundColor: "black",
-      }}
-    >
+    <Container>
       <Stack direction="column" spacing={3}>
         <Header text={headerText} sx={{ mt: 3 }}></Header>
         <Grid container alignItems="center" justifyContent="center">

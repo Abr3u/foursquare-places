@@ -10,8 +10,7 @@ const Header = ({ sx, text }) => {
       variant="h4"
       sx={{
         textAlign: "center",
-        color: "white",
-        ...sx
+        ...sx,
       }}
     >
       {text}
